@@ -45,15 +45,18 @@ mia-dod-nervous-system-aws/
 ├── terraform/          # 🏗️ IaC: Treasury-High / FedRAMP Hardening
 │   ├── modules/        # Reusable IAM, KMS, & VPC Endpoint components
 │   ├── main.tf         # Primary orchestrator (Aurora + Glue)
-│   └── providers.tf    # AWS Region & Provider constraints
-├── ingestion/          # 📡 Senses: Lambda extractors & Kinesis schemas
+│   ├── outputs.tf      # Infrastructure exports
+│   └── variables.tf    # Environment-agnostic configurations
+├── ingestion/          # 📡 Senses: Lambda extractors & Glue templates
 ├── pipeline/           # 🧠 Brain: AWS Glue 4.0 (Spark/Python)
-│   ├── src/            # Core transformation & SageMaker integration
+│   ├── src/            # Core transformation & Vectorization logic
+│   ├── tests/          # Quality Shield: Unit tests for ETL logic
 │   └── setup.py        # Custom library packaging for Glue workers
 ├── database/           # 💾 Memory: Aurora PostgreSQL + pgvector
 │   ├── migrations/     # Versioned schema changes
-│   └── schema/         # Initial HNSW Index & relational setup
+│   └── schema/         # Initial HNSW Index & Vector setup
 ├── agent/              # 🤖 Agent: AI Reasoning & Recall Logic
+├── scripts/            # ⚙️ Motor Functions: Deployment & Seeding automation
 ├── docs/               # 📜 Compliance: AWS Security & Treasury SOPs
 ├── .env.example        # 🔑 Security: Environment template
 └── README.md           # 📖 Roadmap & Documentation

@@ -31,3 +31,4 @@ build/
 .idea/
 .vscode/
 *.swp
+vendor_stubs/
